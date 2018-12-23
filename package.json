@@ -24,7 +24,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "bootstrap": "3",
+    "bootstrap": "^4.1.2",
     "react-bootstrap": "^0.32.4"
   }
 }

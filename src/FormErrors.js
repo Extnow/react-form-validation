@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Error = styled.p`
-  padding: 1rem;
+  padding: 0.5rem;
   margin: 0 0 1rem 0;
   color: white;
   background-color: tomato;

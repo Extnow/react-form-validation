@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 import FormErrors from './FormErrors';
-import styled from 'styled-components';
-
-const FormErrorsWrapper = styled.div``;
 
 export default class Form extends Component {
   state = {
@@ -71,11 +68,11 @@ export default class Form extends Component {
   render() {
     const { email, password, formErrors, formValid } = this.state;
     return (
-      <form className="container">
-        <h2>Sign up</h2>
-        <FormErrorsWrapper>
+      <form className="container mt-5">
+        <h2 className="mb-3">Sign up</h2>
+        <div>
           <FormErrors formErrors={formErrors} />
-        </FormErrorsWrapper>
+        </div>
         <div className={`form-group ${this.errorClass(formErrors.email)}`}>
           <label htmlFor="email">Email address</label>
           <input
