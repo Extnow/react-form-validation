@@ -1,8 +1,5 @@
 {
   "name": "validation",
-  "now": {
-    "alias": "validation.now.sh"
-  },
   "version": "0.1.0",
   "private": true,
   "dependencies": {
