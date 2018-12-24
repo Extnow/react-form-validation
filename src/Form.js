@@ -33,7 +33,7 @@ export default class Form extends Component {
           : ' is invalid, please enter email like username@hostname';
         break;
       case 'password':
-        passwordValid = value.length >= 6;
+        passwordValid = value.length >= 6 || value.length === 0;
         fieldValidationErrors.password = passwordValid ? '' : ' is too short';
         break;
       default:
@@ -62,7 +62,7 @@ export default class Form extends Component {
   };
 
   errorClass = error => {
-    return error.length === 0 ? '' : 'has-error';
+    return error.length === 0 ? '' : 'is-invalid';
   };
 
   render() {
@@ -73,21 +73,22 @@ export default class Form extends Component {
         <div>
           <FormErrors formErrors={formErrors} />
         </div>
-        <div className={`form-group ${this.errorClass(formErrors.email)}`}>
+        <div className="form-group">
           <label htmlFor="email">Email address</label>
           <input
+            placeholder="username@hostname"
             type="email"
-            className="form-control"
+            className={`form-control ${this.errorClass(formErrors.email)}`}
             name="email"
             value={email}
             onChange={this.handleUserInput}
           />
         </div>
-        <div className={`form-group ${this.errorClass(formErrors.password)}`}>
+        <div className="form-group">
           <label htmlFor="password">Password</label>
           <input
             type="password"
-            className="form-control"
+            className={`form-control ${this.errorClass(formErrors.password)}`}
             name="password"
             value={password}
             onChange={this.handleUserInput}
