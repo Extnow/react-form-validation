@@ -1,8 +1,12 @@
 {
   "name": "validation",
+  "now": {
+    "alias": "validation.now.sh"
+  },
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "now": "^12.1.14",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-scripts": "2.1.1",
