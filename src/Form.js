@@ -14,6 +14,12 @@ export default class Form extends Component {
     formValid: false,
   };
 
+  emailInput = React.createRef();
+
+  componentDidMount() {
+    this.emailInput.current.focus();
+  }
+
   validateForm = () => {
     this.setState({
       formValid: this.state.emailValid && this.state.passwordValid,
@@ -82,6 +88,7 @@ export default class Form extends Component {
             name="email"
             value={email}
             onChange={this.handleUserInput}
+            ref={this.emailInput}
           />
         </div>
         <div className="form-group">
